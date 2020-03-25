@@ -1,0 +1,29 @@
+let d = new SoftNum(150);
+let b = new SoftNum(255);
+let x = new SoftNum(150, 0.7, 0.1);
+let y = new SoftNum(150, 0.7, 0.1);
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+
+function draw() {
+  background(220, 0, 0);
+  d.update();
+  b.update();
+  x.update();
+  y.update();
+  noStroke();
+  fill(b.value);
+  ellipse(x.value, y.value, d.value);
+}
+
+function mousePressed() {
+  d.setTarget(random(800));
+}
+
+function mouseMoved() {
+  x.setTarget(mouseX);
+  y.setTarget(mouseY);
+}
