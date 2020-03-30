@@ -1,5 +1,6 @@
 // 23
 
+var dataCode = "AMFAMDHS";
 var dataCode = "LFSFFE15";
 
 var data = [];
@@ -18,7 +19,6 @@ var years = [];
 var iYear = 0;
 
 var unit;
-
 
 function preload() {
   dataTable = loadTable("data/" + dataCode + ".csv", "header");
@@ -57,6 +57,7 @@ function setup() {
   for (let r = 0; r < dataTable.getRowCount(); r++) {
     if (dataTable.getString(r, 0)[0] == "#") continue;
     for (let c = 1; c < dataTable.getColumnCount(); c++) {
+      if (dataTable.get(r, c) == '') continue;
       print(r + "-------" + dataTable.getNum(r, c));
       if (dataTable.getNum(r, c) < dataMin) dataMin = dataTable.getNum(r, c);
       if (dataTable.getNum(r, c) > dataMax) dataMax = dataTable.getNum(r, c);
@@ -97,12 +98,12 @@ function setup() {
 function draw() {
   background(255);
 
-  fill(0);
+  fill(107, 112, 93);
   textAlign(LEFT);
   textSize(20);
   text(dataName, 10, 25);
-  textSize(72);
-  text(years[iYear], 10, 95);
+  textSize(54);
+  text(years[iYear], 10, 75);
 
   data.forEach(function(entry) {
     entry.update();  // run the next animation step

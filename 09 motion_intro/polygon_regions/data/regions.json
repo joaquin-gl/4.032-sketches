@@ -2,43 +2,43 @@
   "regions": [
     {
       "code" : "EAE",
-      "color" : [0, 0, 0],
+      "color" : [186, 86, 36],
       "name" : "E. Asia & Pacific",
       "members" : ["AUS","BRN","KHM","CHN","COK","FJI","IDN","JPN","KIR","LAO","MYS","MHL","FSM","MNG","MMR","NRU","NZL","NIU","PRK","PLW","PNG","PHL","WSM","SGP","SLB","KOR","THA","TLS","TON","TUV","VUT","VNM"]
     },
     {
       "code" : "ECE",
-      "color" : [255, 0, 0],
+      "color" : [140, 188, 185],
       "name" : "Europe & C. Asia",
       "members" : ["ALB","AND","ARM","AUT","AZE","BLR","BEL","BIH","BGR","HRV","CYP","CZE","DNK","EST","FIN","FRA","GEO","DEU","GRC","VAT","HUN","ISL","IRL","ITA","KAZ","KSV","KGZ","LVA","LIE","LTU","LUX","MKD","MCO","MNE","NLD","NOR","POL","PRT","MDA","ROU","RUS","SMR","SRB","SVK","SVN","ESP","SWE","CHE","TJK","TUR","TKM","UKR","GBR","UZB"]
     },
     {
       "code" : "LCE",
-      "color" : [0, 255, 0],
+      "color" : [221, 164, 72],
       "name" : "L. America & Caribbean",
       "members" : ["ATG","ARG","BHS","BRB","BLZ","BOL","BRA","CHL","COL","CRI","CUB","DMA","DOM","ECU","SLV","GRD","GTM","GUY","HTI","HND","JAM","MEX","NIC","PAN","PRY","PER","KNA","LCA","VCT","SUR","TTO","URY","VEN"]
     },
     {
       "code" : "MEE",
-      "color" : [0, 0, 255],
+      "color" : [141, 106, 159],
       "name" : "Mid. East & N. Africa",
       "members" : ["DZA","BHR","DJI","EGY","IRN","IRQ","ISR","JOR","KWT","LBN","LBY","MLT","MAR","OMN","QAT","SAU","SYR","TUN","ARE","YEM"]
     },
     {
       "code" : "NAE",
-      "color" : [255, 255, 0],
+      "color" : [235, 195, 219],
       "name" : "N. America",
-      "members" : ["CAN","USA"]
+      "members" : ["CAN","USA","MEX"]
     },
     {
       "code" : "SAE",
-      "color" : [0, 255, 255],
+      "color" : [226, 235, 152],
       "name" : "S. Asia",
       "members" : ["AFG","BGD","BTN","IND","MDV","NPL","PAK","LKA"]
     },
     {
       "code" : "SSE",
-      "color" : [255, 0, 255],
+      "color" : [147, 226, 145],
       "name" : "Sub-Saharan Africa",
       "members" : ["AGO","BEN","BWA","BFA","BDI","CMR","CPV","CAF","TCD","COM","COG","COD","CIV","GNQ","ERI","ETH","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SYC","SLE","SOM","ZAF","SSD","SDN","SWZ","TZA","TGO","UGA","ZMB","ZWE"]
     }
