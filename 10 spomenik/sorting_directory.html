@@ -1,0 +1,377 @@
+b'<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   Visual Data
+  </title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript">
+  </script>
+  <link href="../css/wro/widget.css?v=1-2-6.423649963269673849" rel="stylesheet" type="text/css"/>
+  <script src="../js/wro/widget.js?v=1-2-6.423649963269673849">
+  </script>
+  <style wix-style="">
+   body {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        #theTable > tbody{
+            {{style.rowFontStyle Body-M}}
+        }
+        #theTable > thead{
+            {{style.titleFontStyle Body-L}}
+        }
+        #theTable > thead > tr > th{
+            color:{{style.titleFontColor color-5}};
+            background-color: {{style.titleBackgroundColor color-2}};
+            background-image: none;
+            vertical-align: top;
+        }
+        #theTable > tbody > tr {
+            color:{{style.rowFontColor color-10}};
+        }
+        .footable-row-detail-name {
+            color:{{style.titleFontColor color-5}};
+            background-color: {{style.titleBackgroundColor color-2}};
+            border: 1px solid {{style.borderColor color-1}};
+            {{style.titleFontStyle Body-L}}
+
+        /* to hide the inside headers in the mobile expand view
+            display:none;
+         */
+        }
+        body{
+            border-color: {{style.outerBorderColor color-1}};
+        }
+        #theTable.isInnerColor{
+            border-top-color: {{style.borderColor color-1}};
+            border-bottom-color: {{style.borderColor color-1}};
+
+        }
+        #theTable.isInnerColor {
+            border-right: none;
+            border-left: none;
+        }
+        .footable-row-detail-value {
+            border: 1px solid {{style.borderColor color-1}};
+            {{style.rowFontStyle Body-M}}
+        }
+        .footable-sort-indicator{
+            {{style.rowFontStyle Body-M}}
+        }
+
+        tr.footableOdd + tr.footable-row-detail > td > div > table > tbody > tr > td.footable-row-detail-value{
+            background-color: {{style.oddRowBackground color-6}}
+         }
+
+        tr.footableEven + tr.footable-row-detail > td > div > table > tbody > tr > td.footable-row-detail-value{
+            background-color: {{style.evenRowBackground color-7}};
+        }
+
+        .footableOdd {
+            background-color: {{style.oddRowBackground color-6}};
+            }
+
+        .footableEven {
+            background-color: {{style.evenRowBackground color-7}};
+        }
+
+
+        .footable>tbody>tr:hover {
+            background-color: {{style.rowHoverBackground color-8}};
+        }
+
+        .footable,
+        .footable> thead > tr > th,
+        .footable > tbody > tr > td {
+            border-color: {{style.borderColor color-1}};
+            border-left-color: {{style.borderColor color-1}};
+        }
+
+        .footable .pagination > ul > li > a{
+            border-color: {{style.borderColor color-1}};
+        }
+
+        .filter> thead > tr > th,
+        .footable > thead > tr > th,
+        .footable > thead > tr > td {
+            background-color: {{style.headerBackgroundColorTop color-1}};
+            background-image: -webkit-gradient(linear, left top, left bottom, from({{style.headerBackgroundColorTop color-1}}), to({{style.headerBackgroundColorBottom color-2}}));
+            background-image: -webkit-linear-gradient(top, {{style.headerBackgroundColorTop color-1}}, {{style.headerBackgroundColorBottom color-2}});
+            background-image: -moz-linear-gradient(top, {{style.headerBackgroundColorTop color-1}}, {{style.headerBackgroundColorBottom color-2}});
+            background-image: -ms-linear-gradient(top, {{style.headerBackgroundColorTop color-1}}, {{style.headerBackgroundColorBottom color-2}});
+            background-image: -o-linear-gradient(top, {{style.headerBackgroundColorTop color-1}}, {{style.headerBackgroundColorBottom color-2}});
+            background-image: linear-gradient(to bottom, {{style.headerBackgroundColorTop color-1}}, {{style.headerBackgroundColorBottom color-2}});
+        }
+        .footable > thead > tr > th,
+        .footable > thead > tr > td {
+            background-color: {{style.headerBackgroundColorBottom color-2}};
+        }
+
+
+        .footable > tfoot > tr > th,
+        .footable > tfoot > tr > td {
+            background-color: {{style.headerBackgroundColorTop color-1}};
+            background-image: -webkit-gradient(linear, left top, left bottom, from({{style.headerBackgroundColorBottom color-2}}), to({{style.headerBackgroundColorTop color-1}}));
+            background-image: -webkit-linear-gradient(top, {{style.headerBackgroundColorBottom color-2}}, {{style.headerBackgroundColorTop color-1}});
+            background-image: -moz-linear-gradient(top, {{style.headerBackgroundColorBottom color-2}}, {{style.headerBackgroundColorTop color-1}});
+            background-image: -ms-linear-gradient(top, {{style.headerBackgroundColorBottom color-2}}, {{style.headerBackgroundColorTop color-1}});
+            background-image: -o-linear-gradient(top, {{style.headerBackgroundColorBottom color-2}}, {{style.headerBackgroundColorTop color-1}});
+            background-image: linear-gradient(to bottom, {{style.headerBackgroundColorBottom color-2}}, {{style.headerBackgroundColorTop color-1}});
+        }
+
+        .footable .pagination > ul > .disabled > span,
+        .footable .pagination > ul > .disabled > a,
+        .footable .pagination > ul > .disabled > a:hover,
+        .footable .pagination > ul > .disabled > a:focus {
+            background-color: {{style.headerBackgroundColorTop color-2}};
+            }
+        .footable .pagination > ul > li > a:hover,
+        .footable .pagination > ul > li > a:focus,
+        .footable .pagination > ul > .active > a,
+        .footable .pagination > ul > .active > span {
+            background-color: {{style.headerBackgroundColorBottom color-3}};
+        }
+        .preview,.error {
+            display:none;
+            background-color:white;
+        }
+        .option {
+            width: 120px;
+        }
+        .searchBox{
+            width: 147px;
+            height: 23px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: rgba(255,255,255,0.8);
+            color:#000;/*{{style.titleFontColor color-5}};*/
+            -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+            -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+            box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+            margin-top: 1px;
+            outline: 0;
+            border:0;
+            padding: 0 6px;
+            font-size: 12px;
+        }
+        ::-webkit-input-placeholder {
+            color:#000;/*{{style.titleFontColor color-5}};*/
+            opacity:0.5;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+            color:#000;
+            opacity:0.5;
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+            color:#000;
+            opacity:0.5;
+        }
+
+        :-ms-input-placeholder {
+            color:#000;
+            opacity:0.5;
+        }
+         /*       .filter{
+            border-collapse: separate;
+            border-spacing: 0;
+            border-width: 1px 1px 0 1px;
+            border-style: solid;
+            color: #444444;
+            background: #ffffff;
+            margin :0;
+        }
+*/
+        #tableWrapper::-webkit-scrollbar{-webkit-appearance:none;width:10px;height:10px;border:1px solid {{style.borderColor color-1}}}
+        #tableWrapper::-webkit-scrollbar-track{background-color:{{style.oddRowBackground color-6}}}
+        #tableWrapper::-webkit-scrollbar-corner{background-color:{{style.evenRowBackground color-7}}}
+        #tableWrapper::-webkit-scrollbar-thumb{border-radius:5px;background-color:{{style.evenRowBackground color-7}};border:solid 1px {{style.oddRowBackground color-6}};}
+/*
+        #tableWrapper::-webkit-scrollbar-thumb:horizontal{border-color:{{style.borderColor color-1}}}
+*/
+        #tableWrapper::-webkit-scrollbar-thumb:hover{background-color:{{style.rowHoverBackground color-8}};}
+  </style>
+  <script>
+   var settings = {"title":null,"csvUrl":null,"origVersion":null,"viewType":"table","data":{"csvString":"Location,Country,Year Built,Surroundings,Condition,Size,Designer,Map #\
+\\"{\\"\\"text\\"\\":\\"\\"Ada\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ada\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1961,Park/Town,Fair,Small,Aleksandar Zarin,93\
+\\"{\\"\\"text\\"\\":\\"\\"Andrijevica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/andrijevica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1967,Park/Town,Good,Medium,Vojislav Vujisi\xc4\x87,76\
+\\"{\\"\\"text\\"\\":\\"\\"Avala\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/avala\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1965,Park/Forested,Excellent,Small,\\"{\\"\\"text\\"\\":\\"\\"Jovan Kratohvil\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jovan-kratohvil\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",29\
+\\"{\\"\\"text\\"\\":\\"\\"Barutana\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/barutana\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1980,Village,Poor,Medium,Svetlana Radevi\xc4\x87,64\
+\\"{\\"\\"text\\"\\":\\"\\"Begunje\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/begunje\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1953,Park/Forested,Good,Small,Edvard Ravnikar,88\
+\\"{\\"\\"text\\"\\":\\"\\"Bela Crkva\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bela-crkva\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1971,Village,Poor,Small,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",58\
+\\"{\\"\\"text\\"\\":\\"\\"Berane\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/berane\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1977,Park/Forested,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",63\
+\\"{\\"\\"text\\"\\":\\"\\"Biha\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bihac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1981,Open fields,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",1\
+\\"{\\"\\"text\\"\\":\\"\\"Botun\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/botun\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,(unknown),Forested/Roadside,Abandoned,Small,(unknown),40\
+\\"{\\"\\"text\\"\\":\\"\\"Bratunac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bratunac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1978,Town,Poor,Medium,Petar Krsti\xc4\x87 ,59\
+\\"{\\"\\"text\\"\\":\\"\\"Bravsko\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bravsko\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1972,Village,Fair,Medium,Mirko Radulovic,54\
+\\"{\\"\\"text\\"\\":\\"\\"Brezovica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/brezovica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Kosovo,1964,Park/Town,Poor,Medium,M. Peci\xc4\x87 & SA Barasa,85\
+\\"{\\"\\"text\\"\\":\\"\\"Br\xc5\xa1tica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/brstica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1981,Village,Poor,Small,Milun Stamboli\xc4\x87,94\
+\\"{\\"\\"text\\"\\":\\"\\"Brze\xc4\x87e\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/brzece\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1969,Mountains/Roadside,Fair,Medium,(unknown),87\
+\\"{\\"\\"text\\"\\":\\"\\"\xc4\x8ca\xc4\x8dak\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/cacak\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1980,Park/Town,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",22\
+\\"{\\"\\"text\\"\\":\\"\\"Cenej\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/cenej\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1971,Open fields,Poor,Small,Paul Radanovic,84\
+\\"{\\"\\"text\\"\\":\\"\\"\xc4\x8crni Kal\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/crni-kal\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1966,Mountains/Roadside,Good,Small,Edo Mihevc,81\
+\\"{\\"\\"text\\"\\":\\"\\"Donji Miholjac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/donji-miholjac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1968,Town,Good,Small,Stephen Brlo\xc5\xa1i\xc4\x87,51\
+\\"{\\"\\"text\\"\\":\\"\\"Dotr\xc5\xa1\xc4\x87ina (Zagreb)\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/dotrscina\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1968,Park/City,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Vojin Bakic\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-bakic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",49\
+\\"{\\"\\"text\\"\\":\\"\\"Draginac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/draginac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1961,Open fields,Fair,Medium,Ostoja G. Balkanski,77\
+\\"{\\"\\"text\\"\\":\\"\\"Dra\xc5\xbego\xc5\xa1e\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/drazgose\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1976,Mountains/Roadside,Excellent,Medium,B. Kobe & S. Batic,4\
+\\"{\\"\\"text\\"\\":\\"\\"Drvar\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/drvar\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1967,Park/Town,Destroyed,Medium,Marijan Kockovi\xc4\x87,55\
+\\"{\\"\\"text\\"\\":\\"\\"Gevgelija\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/gevgelija\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1969,Open Fields/Hillside,Abandoned,Medium,\\"{\\"\\"text\\"\\":\\"\\"Jordan Grabul\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jordan-grabul\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",39\
+\\"{\\"\\"text\\"\\":\\"\\"Glamo\xc4\x8d\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/glamoc\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1978,Park/Forested,Poor,Small,Mirko Ostoja,79\
+\\"{\\"\\"text\\"\\":\\"\\"Gligino Brdo (Dobrljin)\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/gligino-brdo\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,(unknown),Open fields/Hillside,Poor,Small,(unknown),91\
+\\"{\\"\\"text\\"\\":\\"\\"Golubovci\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/golubovci\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1974,Park/Town,Fair,Small,Slobodan Slovini\xc4\x87,65\
+\\"{\\"\\"text\\"\\":\\"\\"Gornji Jelovac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/gornji-jelovac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,(unknown),Forested/Roadside,Abandoned,Small,(unknown),16\
+\\"{\\"\\"text\\"\\":\\"\\"Grme\xc4\x8d\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/grmec\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1979,Mountains,Abandoned,Large,\\"{\\"\\"text\\"\\":\\"\\"Ljubomir Denkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ljubomir-denkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",56\
+\\"{\\"\\"text\\"\\":\\"\\"Ilirska Bistrica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ilirska-bistrica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1965,Park/Town,Excellent,Medium,\\"{\\"\\"text\\"\\":\\"\\"Janez Lenassi\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/janez-lenassi\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",3\
+\\"{\\"\\"text\\"\\":\\"\\"Jabuka\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jabuka\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1981,Open fields,Poor,Large,Neboj\xc5\xa1a Delja,80\
+\\"{\\"\\"text\\"\\":\\"\\"Jajinci\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jajinci\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1988,Park/Town,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Vojin Stoji\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-stojic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",72\
+\\"{\\"\\"text\\"\\":\\"\\"Jasenica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jasenica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1979,Mountains,Abandoned,Small,\\"{\\"\\"text\\"\\":\\"\\"Ljubomir Denkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ljubomir-denkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",73\
+\\"{\\"\\"text\\"\\":\\"\\"Jasenovac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jasenovec\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1966,Open fields,Excellent,Large,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",7\
+\\"{\\"\\"text\\"\\":\\"\\"Kadinja\xc4\x8da\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kadinjaca\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1979,Mountains/Roadside,Good,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",21\
+\\"{\\"\\"text\\"\\":\\"\\"Kamenska\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kamenska\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1968,Open fields,Destroyed,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Vojin Baki\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-bakic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",42\
+\\"{\\"\\"text\\"\\":\\"\\"Kavadarci\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kavadarci\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macaedonia,1976,Park/Hillside,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Peter Mulichkoski\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/peter-mulichkoski\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",37\
+\\"{\\"\\"text\\"\\":\\"\\"Knin\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/knin\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1969,Mountains,Destroyed,Medium,\\"{\\"\\"text\\"\\":\\"\\"\xc4\x90or\xc4\x91e Romi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-bakic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",11\
+\\"{\\"\\"text\\"\\":\\"\\"Ko\xc4\x8dani\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kocani\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1977,Park/Hillside,Poor,Medium,Gligora Cemerski,69\
+\\"{\\"\\"text\\"\\":\\"\\"Kola\xc5\xa1in\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kolasin\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1978,Town,Fair,Very Large,Marko Mu\xc5\xa1i\xc4\x8d,62\
+\\"{\\"\\"text\\"\\":\\"\\"Korenica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/korenica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1981,Open fields,Destroyed,Large,V. Ugrenovi\xc4\x87 & B. Radimir,43\
+\\"{\\"\\"text\\"\\":\\"\\"Kosmaj\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kosmaj\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1970,Park/Mountains,Fair,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Vojin Stoji\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-stojic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",26\
+\\"{\\"\\"text\\"\\":\\"\\"Ko\xc5\xa1ute\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kosute\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1961,Mountains,Destroyed,Medium,\\"{\\"\\"text\\"\\":\\"\\"Vuko Bombardelli\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vuko-bombardelli\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",13\
+\\"{\\"\\"text\\"\\":\\"\\"Kozara\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kozara\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1972,Park/Mountains,Excellent,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Du\xc5\xa1an D\xc5\xbeamonja\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/dusan-dzamonja\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",9\
+\\"{\\"\\"text\\"\\":\\"\\"Kragujevac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kragujevac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1963,Park,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",25\
+\\"{\\"\\"text\\"\\":\\"\\"Kraljevo\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/kraljevo\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1970,Park/Town,Good ,Large,Spasoje Krunic,60\
+\\"{\\"\\"text\\"\\":\\"\\"Landovica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/landovica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Kosovo,1963,Town,Destroyed,Medium,M. Peci\xc4\x87 & SA Barasa,86\
+\\"{\\"\\"text\\"\\":\\"\\"Leskovac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/leskovac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1971,Park/Town,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",67\
+\\"{\\"\\"text\\"\\":\\"\\"Majdanpek\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/majdanpek\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,(unknown),Park/Village,Poor,Medium,(unknown),61\
+\\"{\\"\\"text\\"\\":\\"\\"Makarska\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/makarska\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1974,Park/City,Excellent,Large,Matija Salaj,45\
+\\"{\\"\\"text\\"\\":\\"\\"Makljen\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/makljen\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1978,Mountains,Destroyed,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bo\xc5\xa1ko Ku\xc4\x87anski\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bosko-kucanski\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",47\
+\\"{\\"\\"text\\"\\":\\"\\"Maribor\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/maribor\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1975,City,Excellent,Medium,\\"{\\"\\"text\\"\\":\\"\\"Slavko Tihec\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/slavko-tihec\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",23\
+\\"{\\"\\"text\\"\\":\\"\\"Medno Polje\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/medeno-polje\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,(unknown),Open fields,Abandoned,Small,(unknown),53\
+\\"{\\"\\"text\\"\\":\\"\\"Mirna\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/mirna\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1965,Park/Town,Good,Small,\\"{\\"\\"text\\"\\":\\"\\"Janez Lenassi\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/janez-lenassi\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",74\
+\\"{\\"\\"text\\"\\":\\"\\"Mitrovica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/mitrovica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Kosovo,1973,Park/Hillside,Poor,Large,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",34\
+\\"{\\"\\"text\\"\\":\\"\\"Mostar\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/mostar\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1965,Park/Town,Poor,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",15\
+\\"{\\"\\"text\\"\\":\\"\\"Nik\xc5\xa1i\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/niksic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1982,Town,Fair,Large,Ljubo Vojvodic,27\
+\\"{\\"\\"text\\"\\":\\"\\"Ni\xc5\xa1\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/nis\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1963,Park/Town,Fair,Large,Ivan Saboli\xc4\x87,31\
+\\"{\\"\\"text\\"\\":\\"\\"Novi Travnik\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/novi-travnik\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1975,Open fields,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",18\
+\\"{\\"\\"text\\"\\":\\"\\"Ostra\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ostra\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1969,Village,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",24\
+\\"{\\"\\"text\\"\\":\\"\\"Petrova Gora\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/petrova-gora\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1981,Park/Mountains,Destroyed,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Vojin Baki\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vojin-bakic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",2\
+\\"{\\"\\"text\\"\\":\\"\\"Pleso\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/pleso\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1978,Town,Fair,Medium,Marijan Burger,75\
+\\"{\\"\\"text\\"\\":\\"\\"Plovanija\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/plovanija\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1981,Park/Town,Good,Medium,Aleksandar Rukavina,71\
+\\"{\\"\\"text\\"\\":\\"\\"Podgari\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/podgarica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1976,Village/Hillside,Good,Large,\\"{\\"\\"text\\"\\":\\"\\"Du\xc5\xa1an D\xc5\xbeamonja\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/dusan-dzamonja\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",6\
+\\"{\\"\\"text\\"\\":\\"\\"Podgora\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/podgora\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1962,Town,Good,Large,Rajko Radovic,14\
+\\"{\\"\\"text\\"\\":\\"\\"Podhum\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/podhum\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1970,Park/Town,Fair,Large,\\"{\\"\\"text\\"\\":\\"\\"Sime Vulas\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/sime-vulas\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",41\
+\\"{\\"\\"text\\"\\":\\"\\"Popina\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/popina\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1981,Open fields/Hillside,Fair,Large,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",32\
+\\"{\\"\\"text\\"\\":\\"\\"Po\xc5\xbearevac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/pozarevac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1985,Park/Town,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Milorad Tepavac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/milorad-tepavac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",30\
+\\"{\\"\\"text\\"\\":\\"\\"Prilep\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/prilep\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1961,Park/Town,Excellent,Small,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",46\
+\\"{\\"\\"text\\"\\":\\"\\"Pri\xc5\xa1tina\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/pristina\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Kosovo,1961,City,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",35\
+\\"{\\"\\"text\\"\\":\\"\\"Sanski Most\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/sanski\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1970,Park/Town,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Petar Krsti\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/petar-krstic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",10\
+\\"{\\"\\"text\\"\\":\\"\\"Sarajevo\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/crni-kal\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1981,Park/City,Poor,Very Large,Vladimir Dobrovi\xc4\x87,82\
+\\"{\\"\\"text\\"\\":\\"\\"Sinj\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/sinj\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1962,Forested,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Vuko Bombardelli\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vuko-bombardelli\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",28\
+\\"{\\"\\"text\\"\\":\\"\\"Sisak\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/sisak\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1981,Forested,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"\xc5\xbdelimir Jane\xc5\xa1\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zelimir-janes\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",5\
+\\"{\\"\\"text\\"\\":\\"\\"Slabinja\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/slabinja\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1981,Park/Village,Poor,Medium,Stanislav Mi\xc5\xa1i\xc4\x87,50\
+\\"{\\"\\"text\\"\\":\\"\\"Sremska Mitrovica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/sremska-mitrovica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1960,Park/Town,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",83\
+\\"{\\"\\"text\\"\\":\\"\\"\xc5\xa0tip\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/stip\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1974,Town,Poor,Small,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",38\
+\\"{\\"\\"text\\"\\":\\"\\"Struga\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/struga\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1974,City,Good,Medium,Vojislav Vasiljevi\xc4\x87,70\
+\\"{\\"\\"text\\"\\":\\"\\"Tjenti\xc5\xa1te\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/tjentiste\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1971,Mountains,Good,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",20\
+\\"{\\"\\"text\\"\\":\\"\\"Ulcinj\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ulcinj\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1985,City,Poor,Medium,\\"{\\"\\"text\\"\\":\\"\\"Miodrag \xc5\xbdivkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/miodrag-zivkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",52\
+\\"{\\"\\"text\\"\\":\\"\\"Velanija\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/velanija\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Kosovo,1961,Park/City,Poor,Large,Svetislav Licina,66\
+\\"{\\"\\"text\\"\\":\\"\\"Veles\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/veles\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1979,Park/Town,Fair,Large,\\"{\\"\\"text\\"\\":\\"\\"Ljubomir Denkovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/ljubomir-denkovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",44\
+\\"{\\"\\"text\\"\\":\\"\\"Vlasotince\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vlasotince\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1975,Town/Cemetery,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",68\
+\\"{\\"\\"text\\"\\":\\"\\"Vo\xc4\x91enica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vodjenica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,(unknown),Village,Abandoned,Small,(unknown),78\
+\\"{\\"\\"text\\"\\":\\"\\"Vodice\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vodice\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1965,Town,Good,Medium,Marijan Burger,12\
+\\"{\\"\\"text\\"\\":\\"\\"Vogo\xc5\xa1\xc4\x87a\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vogosca\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1969,Park/Town,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Petar Krsti\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/petar-krstic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",19\
+\\"{\\"\\"text\\"\\":\\"\\"Vranjske Njive\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vranjske-njive\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Montenegro,1970s,Village/Roadside,Fair,Small,Svetlana Radevi\xc4\x87,90\
+\\"{\\"\\"text\\"\\":\\"\\"Vrto\xc4\x8de\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vrtoce\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1971,Town,Good,Small,Neboj\xc5\xa1a Latinovi\xc4\x87,96\
+\\"{\\"\\"text\\"\\":\\"\\"Vukovar\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/vukovar\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1980,Park/Town,Fair,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",8\\\"{\\"\\"text\\"\\":\\"\\"Zagreb\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zagreb\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1960,Park/City,Good,Small,\\"{\\"\\"text\\"\\":\\"\\"Du\xc5\xa1an D\xc5\xbeamonja\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/dusan-dzamonja\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",92\
+\\"{\\"\\"text\\"\\":\\"\\"Zaje\xc4\x8dar\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zajecar\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1971,Park/Forested,Poor,Medium,Vladimira Velikovi\xc4\x87a,89\
+\\"{\\"\\"text\\"\\":\\"\\"Zaostrog\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zaostrog\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Croatia,1979,Town,Good,Small,Rudolf Matutinovi\xc4\x87,57\
+\\"{\\"\\"text\\"\\":\\"\\"Zenica\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zenica\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Bosnia,1968,Mountains,Fair,Medium,Arfan Hozi\xc4\x87,17\
+\\"{\\"\\"text\\"\\":\\"\\"Zlatibor\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zlatibor\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1967,Park/Hillside,Good,Medium,Jovanka Jeftanovi\xc4\x87,48\
+\\"{\\"\\"text\\"\\":\\"\\"\xc5\xbdu\xc5\xbeemberk\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/zuzemberk\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Slovenia,1961,Park/Town,Excellent,Medium,Marjan Tepina,95\
+\\"{\\"\\"text\\"\\":\\"\\"Kru\xc5\xa1evac\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/krusevac\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Serbia,1965,Park/Town,Good,Medium,\\"{\\"\\"text\\"\\":\\"\\"Bogdan Bogdanovi\xc4\x87\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/bogdan-bogdanovic\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",33\
+\\"{\\"\\"text\\"\\":\\"\\"Kru\xc5\xa1evo\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/krusevo\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",Macedonia,1974,Park/Town,Good,Very Large,\\"{\\"\\"text\\"\\":\\"\\"Jordan Grabul\\"\\",\\"\\"href\\"\\":\\"\\"http://www.spomenikdatabase.org/jordan-grabul\\"\\",\\"\\"protocol\\"\\":\\"\\"http://\\"\\",\\"\\"target\\"\\":\\"\\"newTab\\"\\",\\"\\"cellType\\"\\":\\"\\"complex\\"\\",\\"\\"email\\"\\":\\"\\"\\"\\",\\"\\"type\\"\\":\\"\\"webAddress\\"\\"}\\",36\
+","type":"csvString","csvUrl":"https://docs.google.com/spreadsheets/d/1FUTEtC9kVZKiEvsATJVucbT2Ybp3cmixc9SjccC0K7I/export?format=csv"},"tableParams":{"appHeight":"auto","mobileView":"expand","filterText":"Search"},"pieChartParams":{},"columnChartParams":{},"lineChartParams":{},"areaChartParams":null};
+        var endpoint = \'desktop\';
+        var instance= \'Hiy82tocDowLa7qNIBIzfwMVmaRu7xsVOyOcbjzMxrU.eyJpbnN0YW5jZUlkIjoiNTE3ZTY4OTMtNTE3Ny00Njc1LWFjYTctZDVmMDcwZTZlYjQ3IiwiYXBwRGVmSWQiOiIxMzQxMzlmMy1mMmEwLTJjMmMtNjkzYy1lZDIyMTY1Y2ZkODQiLCJtZXRhU2l0ZUlkIjoiNjgyZTFmZTMtOGNmNi00NWY3LWJiNWUtZjVkNGQ5OTI0YzgzIiwic2lnbkRhdGUiOiIyMDIwLTA0LTEwVDEzOjAyOjI3LjM5OFoiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImQ0NjZlZjNlLTYwZWMtNDhlNC1iNDU5LWU3NWRjNzk1MmFmMCIsImJpVG9rZW4iOiIzOTUwNzc3MC1kZDgxLTAzODItMTdmOS0yMDI0YTk3NGE3YzQiLCJzaXRlT3duZXJJZCI6ImU3M2ExNDllLTRhNDgtNDU0MS05NTE0LWZjYzVlYzY5MzVmOCJ9\';
+        settings = jQuery.extend({}, settings);
+        var version = \'1-2-6.423649963269673849\';
+        var pageManager;
+//        google.load("visualization", "1", {packages:["corechart"]});
+    function fixErrorVal(value){
+        if(value.indexOf(\'"\')>=0 || value.indexOf(\',\')>=0){
+            value = value.replace(/"/g,\'""\');
+            value = \'"\'+value+\'"\';
+        }
+        return value;
+    }
+        $(document).ready(function() {
+            pageManager = new PageManager();
+            pageManager.init(settings, endpoint,
+                    {
+                        loaderErrorTitle: fixErrorVal(\'We are having problems loading your table information.\'),
+                        loaderErrorBody: fixErrorVal(\'Make sure to follow the instructions in the Settings Panel\'),
+                        loaderErrorTitleEmpty: fixErrorVal(\'Hey, your table is empty.\'),
+                        loaderErrorBodyEmpty: fixErrorVal(\'You\\\'ll need to add some information\'),
+                        loaderErrorTitleCsv: fixErrorVal(\'Oops! The URL you entered does not point to a google spreadsheet or a CSV file.\'),
+                        loaderErrorBodyCsv: fixErrorVal(\'Please check the link and try again\'),
+                        loaderErrorTitleViewer: fixErrorVal(\'This table is empty.\'),
+                        loaderErrorBodyViewer: fixErrorVal(\'Nothing to see here\'),
+                        loaderErrorTitle400: fixErrorVal(\'Oops! The URL you entered doesn\\\'t work.\'),
+                        loaderErrorBody400: fixErrorVal(\'Please check the link and try again\'),
+                        loaderErrorTitle403: fixErrorVal(\'Humm, it seems your Google spreadsheet is set to private.\'),
+                        loaderErrorBody403: fixErrorVal(\'To make it public: Open App Settings > Go to Data Source and follow the instructions\'),
+                        loaderErrorTitle404: fixErrorVal(\'Oops! The URL you entered doesn\\\'t exist.\'),
+                        loaderErrorBody404: fixErrorVal(\'Please check the link and try again\'),
+                        loaderErrorTitle500: fixErrorVal(\'Ouch! Something broke.\'),
+                        loaderErrorBody500: fixErrorVal(\'The server sending the table information reported a problem\'),
+                        loaderErrorTitle503: fixErrorVal(\'Ouch! Something broke.\'),
+                        loaderErrorBody503: fixErrorVal(\'The server sending the table information is temporarily offline, try again in a few minutes\'),
+                    },
+                    \'Hiy82tocDowLa7qNIBIzfwMVmaRu7xsVOyOcbjzMxrU.eyJpbnN0YW5jZUlkIjoiNTE3ZTY4OTMtNTE3Ny00Njc1LWFjYTctZDVmMDcwZTZlYjQ3IiwiYXBwRGVmSWQiOiIxMzQxMzlmMy1mMmEwLTJjMmMtNjkzYy1lZDIyMTY1Y2ZkODQiLCJtZXRhU2l0ZUlkIjoiNjgyZTFmZTMtOGNmNi00NWY3LWJiNWUtZjVkNGQ5OTI0YzgzIiwic2lnbkRhdGUiOiIyMDIwLTA0LTEwVDEzOjAyOjI3LjM5OFoiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImQ0NjZlZjNlLTYwZWMtNDhlNC1iNDU5LWU3NWRjNzk1MmFmMCIsImJpVG9rZW4iOiIzOTUwNzc3MC1kZDgxLTAzODItMTdmOS0yMDI0YTk3NGE3YzQiLCJzaXRlT3duZXJJZCI6ImU3M2ExNDllLTRhNDgtNDU0MS05NTE0LWZjYzVlYzY5MzVmOCJ9\', \'comp-itkrggy1\', version
+            );
+        });
+  </script>
+ </head>
+ <body>
+  <div class="error">
+   <div id="errorTitle" style="font-weight:bold">
+   </div>
+   <div id="errorData">
+   </div>
+  </div>
+  <div id="chartTableDiv" style="display:none">
+   <table class="filter outerBorder" id="filterTable" style="width:100%;">
+    <thead>
+     <tr>
+      <th colspan="100%" style="height:37px;text-align: center;">
+       <div id="filterBox" style="display:none;">
+        <input class="searchBox" id="filterInput" type="text"/>
+       </div>
+      </th>
+     </tr>
+    </thead>
+   </table>
+  </div>
+  <div id="tableWrapper" style="overflow: auto;">
+   <table class="footable table outerBorder" id="theTable" style="display:none;width:100%;margin:0">
+   </table>
+  </div>
+  <table class="footable footer outerBorder" id="pagerFilter" style="width:100%;margin:0;display:none">
+   <tfoot id="noPager">
+    <tr>
+     <td colspan="100%" style="height:26px;">
+     </td>
+    </tr>
+   </tfoot>
+  </table>
+  <div id="chartDiv" tyle="display:none">
+  </div>
+  <script src="//static.parastorage.com/services/js-sdk/1.90.0/js/wix-private.min.js" type="text/javascript">
+  </script>
+ </body>
+</html>
+'
