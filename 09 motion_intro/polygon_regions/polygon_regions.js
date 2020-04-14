@@ -96,7 +96,7 @@ function setup() {
 
 
 function draw() {
-  background(255);
+  background(253);
 
   fill(107, 112, 93);
   textAlign(LEFT);

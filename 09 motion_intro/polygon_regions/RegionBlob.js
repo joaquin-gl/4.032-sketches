@@ -68,6 +68,7 @@ function RegionBlob(rgn, yr) {
         text(region.members[c] + " : " + countryName + " : " + nf(radius[c].value, 0, 2) + unit, 10, height - 10);
       }
       ellipse(x, y, 10, 10);
+      ellipse(center[0], center[1], 20, 20);
       stroke(region.color[0], region.color[1], region.color[2], opacity[c].value);
       line(center[0], center[1], x, y);
       pop();
