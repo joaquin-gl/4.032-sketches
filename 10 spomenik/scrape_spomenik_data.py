@@ -51,6 +51,13 @@ def dims_to_list(input_string):
             continue
     return dims_list
 
+def designers_to_list(input_string):
+    designer_list = []
+    for s in re.split('&|and|,', re.sub(r'\([^)]*\)', '', re.sub(r'\[[^)]*\]', '', input_string))):
+        # print(s)
+        designer_list.append(s.strip())
+    return designer_list
+
 urls = []
 
 # random selection of urls
@@ -68,12 +75,12 @@ urls = []
 # urls.append('https://www.spomenikdatabase.org/jabuka')
 
 # all urls
-# with open('i_url.csv', mode = 'r', encoding = 'utf8') as csvinput:
-#     reader = csv.reader(csvinput)
-#     for row in reader:
-#         if row[1] == 'URL': continue
-#         # print(row[1])
-#         urls.append(row[1])
+with open('i_url.csv', mode = 'r', encoding = 'utf8') as csvinput:
+    reader = csv.reader(csvinput)
+    for row in reader:
+        if row[1] == 'URL': continue
+        # print(row[1])
+        urls.append(row[1])
 
 print()
 
@@ -81,14 +88,15 @@ print()
 data = {}
 data['spomeniks'] = []
 
-try_coords = [
-'N44°45\'44.1\", E16°41\'02.2\"',
-'N42°53\'45.3\", E20°51\'36.4\"',
-'N45°26\'46.4\", E17°28\'36.4\"',
-'N43°43\'47.7\", E20°41\'30.6\"',
-]
-for c in try_coords:
-    print(coords_to_floats(c))
+# get certain null read coordinates
+# try_coords = [
+# 'N44°45\'44.1\", E16°41\'02.2\"',
+# 'N42°53\'45.3\", E20°51\'36.4\"',
+# 'N45°26\'46.4\", E17°28\'36.4\"',
+# 'N43°43\'47.7\", E20°41\'30.6\"',
+# ]
+# for c in try_coords:
+#     print(coords_to_floats(c))
 
 for url in urls:
 
@@ -100,7 +108,7 @@ for url in urls:
     title = ''
     try: title = soup.find_all(attrs = {'class' : 'txtNew'})[7].text.strip()
     except: title = None
-    print(title)
+    # print(title)
 
     # search for text files to then find details
     search_text = soup.find_all(attrs = {'class' : 'txtNew'})
@@ -115,9 +123,9 @@ for url in urls:
             break;
 
     # output info block to scrape
-    # file = open('scrape.html', 'w', encoding = 'utf8')
-    # for i in range(len(info)):
-    #     file.write(f'{info[i].text}\n')
+    file = open('scrape.html', 'w', encoding = 'utf8')
+    for i in range(len(info)):
+        file.write(f'{info[i].text}\n')
 
     # extract long name
     name = val(info[1])
@@ -146,8 +154,9 @@ for url in urls:
     # print(year)
 
     # extract designer, remove parentheses message
-    designer = val(info[4]).split("(",1)[0].strip()
+    designer = designers_to_list(val(info[4]))
     # print(designer)
+    # print(f'{title}\n  {val(info[4])}\n  {designer}')
 
     # extract coordinates, remove parentheses message, convert to floats
     coords = val(info[5]).split("(",1)[0]
@@ -178,8 +187,8 @@ for url in urls:
         'title' : title,
         'name' : name,
         'location' : location,
-        'country' : country,
         'city' : city,
+        'country' : country,
         'year' : year,
         'designer' : designer,
         'coords' : [lat, lon],
@@ -187,6 +196,13 @@ for url in urls:
         'materials' : materials,
         'condition' : condition
     })
+
+    # to get multiple designers
+    # data['spomeniks'].append({
+    #     'url' : url,
+    #     'title' : title,
+    #     'designer' : designer,
+    # })
     # print()
 
 # print(data)
