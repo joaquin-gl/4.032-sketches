@@ -1,11 +1,6 @@
-# Import libraries
-import requests
-# import urllib.request
+import requests# import urllib.request
 import csv # for reading csv spomenik data
 import unidecode # for decoding accents from names in csv
-# import time
-# from bs4 import BeautifulSoup
-# import pandas as pd
 
 with open('spomenik_source.csv', mode = 'r', encoding = 'utf8') as csvinput, open('output.csv', mode = 'w', encoding = 'utf8') as csvoutput:
     reader = csv.reader(csvinput)
@@ -33,9 +28,3 @@ with open('spomenik_source.csv', mode = 'r', encoding = 'utf8') as csvinput, ope
         all.append(row)
 
     writer.writerows(all)
-
-
-# pandas implementation
-# csv_input = pd.read_csv('spomenik_source.csv')
-# csv_input['url'] = 'https://www.spomenikdatabase.org/' + unidecode.unidecode(csv_input['Spomenik City']).lower().replace(' ', '-')
-# csv_input.to_csv('output.csv', index=False)
