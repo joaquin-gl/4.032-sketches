@@ -1,3 +1,5 @@
 # no pdfs or ai files
 *.pdf
 *.ai
+*.png
+*.webp
