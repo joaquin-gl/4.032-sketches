@@ -1,5 +1,4 @@
 function DataPoint(idx) {
-  print(idx);
   var spomenik = spmkJSON.spomeniks[idx];
   var attributes = [];
   var attrPos = {};
@@ -51,8 +50,8 @@ function DataPoint(idx) {
   var coords = spomenik.coords;
   var spmkImg = spmkImgs[idx]
 
-  var mapx = map(coords[1], map.longitude[0], map.longitude[1], map.left, map.right);
-  var mapy = map(coords[0], map.latitude[0], map.latitude[1], map.bottom, map.top);
+  var mapx = map(coords[1], rmap.longitude[0], rmap.longitude[1], rmap.left, rmap.right);
+  var mapy = map(coords[0], rmap.latitude[0], rmap.latitude[1], rmap.bottom, rmap.top);
 
   var x = new SoftNum(mapx);
   var y = new SoftNum(mapy);
@@ -81,11 +80,12 @@ function DataPoint(idx) {
       if (attributes[i] == attrFeature) {
         littleFeature = true;
         if (spmkFeature != idx) {
-          let lx = map.width/5*(attrPos[attributes[i]]%9);
-          let ly = width.value*spmkImg.height/spmkImg.width*floor(attrPos[attributes[i]]/9);
-          x.setTarget(map.left + lx);
-          y.setTarget(map.bottom + 30 + ly);
-          width.setTarget(map.width/5);
+          let rowN = 5;
+          let lx = rmap.width/5*(attrPos[attributes[i]]%rowN);
+          let ly = width.value*spmkImg.height/spmkImg.width*floor(attrPos[attributes[i]]/rowN);
+          x.setTarget(rmap.left + lx);
+          y.setTarget(rmap.bottom + 30 + ly);
+          width.setTarget(rmap.width/5);
           opac.setTarget(0);
         }
       }

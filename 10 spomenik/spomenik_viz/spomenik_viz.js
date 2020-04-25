@@ -4,7 +4,7 @@ var spmkJSON; // load data into processing
 var yugoImg; // load yugoslavia image
 var spmkImgs = []; // load spomenik images
 
-var map = {}; // bounds for map loading
+var rmap = {}; // bounds for map loading
 var sb = {}; // bounds for sidebar loading
 
 var spmkFeature; // spomenik to feature
@@ -28,21 +28,21 @@ function preload() {
 function setup() {
   // createCanvas(960, 960);
   // createCanvas(1366, 768);
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, 2*windowHeight);
 
   print('num of spomeniks: ' + spmkJSON.spomeniks.length);
 
   let margin = width/14;
 
-  map.left = margin;
-  map.top = margin/3*2;
-  map.width = width/2 - margin;
-  map.height = map.width * yugoImg.height / yugoImg.width;
-  map.right = map.left + map.width;
-  map.bottom = map.top + map.height;
+  rmap.left = margin;
+  rmap.top = margin/3*2;
+  rmap.width = width/2 - margin;
+  rmap.height = rmap.width * yugoImg.height / yugoImg.width;
+  rmap.right = rmap.left + rmap.width;
+  rmap.bottom = rmap.top + rmap.height;
 
-  map.latitude = [40.7, 47];
-  map.longitude = [13.2, 23.3];
+  rmap.latitude = [40.7, 47];
+  rmap.longitude = [13.2, 23.3];
 
   sb.right = width - margin;
   sb.top = margin/3*2;
@@ -51,43 +51,39 @@ function setup() {
   sb.left = sb.right - sb.width;
   sb.bottom = sb.top + sb.height;
 
-  // for (let i=0; i<spmkJSON.spomeniks.length; i++) {
-  // for (let i=0; i<17; i++) {
-  //   var spomenik = spmkJSON.spomeniks[idx];
-  //
-  //   for (designer in spomenik.designer) {
-  //     attr[designer].push(i);
-  //     print(attr[designer]);
-  //   }
-  //   for (material in spomenik.materials){
-  //     attr[material].push(i);
-  //   }
-  // }
-  // for (let i=0; i<spmkJSON.spomeniks.length; i++) {
   for (let i=0; i<n; i++) {
     data.push(new DataPoint(i));
   }
+
+  // check all attribute names to output file
+  // let writer = createWriter('output.txt');
+  // Object.keys(attr).forEach(function(key) {
+  //   writer.write(key +'\n');
+  // });
+  // writer.close();
 }
 
 function draw() {
   background(240);
   noStroke();
 
+  // outline the different regions
   // push();
   // noFill();
   // stroke(100);
-  // rect(map.left, map.top, map.width, map.height)
+  // rect(rmap.left, rmap.top, rmap.width, rmap.height)
   // rect(sb.left, sb.top, sb.width, sb.height)
   // pop();
 
   // plot yugoslavia
-  image(yugoImg, map.left, map.top, map.width, map.height);
+  image(yugoImg, rmap.left, rmap.top, rmap.width, rmap.height);
 
   // write attribute featured
   fill(186, 86, 36);
   textSize(36);
-  text(attrFeature, map.left, map.bottom);
+  text(attrFeature, rmap.left, rmap.bottom);
 
+  // update, display each spomenik
   data.forEach(function(entry){
     entry.update();
     entry.display();

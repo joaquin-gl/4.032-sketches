@@ -258,7 +258,7 @@
     "coords": [43.346111111111114, 18.686833333333333],
     "dimensions": [19.0, 25.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["fair to good", "much improved ", "mine warning - read below)"]
+    "condition": ["fair to good", "much improved ", "mine warning"]
   }, {
     "url": "https://www.spomenikdatabase.org/kadinjaca",
     "title": "Kadinjača (Кадињача)",
@@ -267,7 +267,7 @@
     "city": "14km NW of Užice",
     "country": "Serbia ",
     "year": 1952,
-    "designer": ["Miodrag Živković", "Aleks", "ar Đokić"],
+    "designer": ["Miodrag Živković", "Aleksandar Đokić"],
     "coords": [43.91213888888889, 19.742694444444446],
     "dimensions": [15.0],
     "materials": ["poured concrete", "rebar", "granite blocks"],
@@ -492,7 +492,7 @@
     "coords": [41.73838888888889, 22.187444444444445],
     "dimensions": [2.0],
     "materials": ["white marble blocks"],
-    "condition": ["fair", "some neglect", "v", "alism"]
+    "condition": ["fair", "some neglect", "vandalism"]
   }, {
     "url": "https://www.spomenikdatabase.org/gevgelija",
     "title": "Gevgelija (Гевгелија)",
@@ -816,7 +816,7 @@
     "designer": ["Bogdan Bogdanović"],
     "coords": [42.85033333333333, 19.880194444444445],
     "dimensions": [18.0],
-    "materials": ["s", "stone", "gabbro blocks"],
+    "materials": ["sandstone", "gabbro blocks"],
     "condition": ["good"]
   }, {
     "url": "https://www.spomenikdatabase.org/barutana",
@@ -917,7 +917,7 @@
     "city": "Plovanija",
     "country": "Croatia",
     "year": 1981,
-    "designer": ["Aleks", "ar Rukavina"],
+    "designer": ["Aleksandar Rukavina"],
     "coords": [45.45075, 13.635305555555554],
     "dimensions": [12.0],
     "materials": ["poured concrete", "rebar", "mosaic tiles"],
@@ -1203,7 +1203,7 @@
     "city": "Vojvodina",
     "country": "Serbia",
     "year": 1961,
-    "designer": ["Aleks", "ar Zarin"],
+    "designer": ["Aleksandar Zarin"],
     "coords": [45.79644444444444, 20.134722222222223],
     "dimensions": [5.0],
     "materials": ["bronze"],
@@ -1259,7 +1259,7 @@
     "coords": [42.580444444444446, 19.053527777777777],
     "dimensions": [4.0, 5.0],
     "materials": ["concrete"],
-    "condition": ["poor shape", "neglected"]
+    "condition": ["poor", "neglected"]
   }, {
     "url": "https://www.spomenikdatabase.org/lepoglava",
     "title": "Lepoglava",
