@@ -45,7 +45,7 @@ function DataPoint(idx) {
   }
 
   // print(attributes);
-  print(spomenik.title);
+  // print(spomenik.title);
 
   var coords = spomenik.coords;
   var spmkImg = spmkImgs[idx]
@@ -60,6 +60,10 @@ function DataPoint(idx) {
 
   this.update = function() {
 
+    // update map locations (if window resized)
+    mapx = map(coords[1], rmap.longitude[0], rmap.longitude[1], rmap.left, rmap.right);
+    mapy = map(coords[0], rmap.latitude[0], rmap.latitude[1], rmap.bottom, rmap.top);
+
     // update all variables
     x.update();
     y.update();
@@ -69,36 +73,30 @@ function DataPoint(idx) {
     // feature spomenik if near point zone
     if (dist(mouseX, mouseY, x.value, y.value) < 10) {
       spmkFeature = idx;
+    }
+
+    if (spmkFeature == idx) {
+      // move picture to sidebar if featured
       x.setTarget(sb.left);
       y.setTarget(sb.top);
       width.setTarget(sb.width);
       opac.setTarget(255);
-    }
-
-    let littleFeature = false;
-    for (i in attributes) {
-      if (attributes[i] == attrFeature) {
-        littleFeature = true;
-        if (spmkFeature != idx) {
-          let rowN = 5;
-          let lx = rmap.width/5*(attrPos[attributes[i]]%rowN);
-          let ly = width.value*spmkImg.height/spmkImg.width*floor(attrPos[attributes[i]]/rowN);
-          x.setTarget(rmap.left + lx);
-          y.setTarget(rmap.bottom + 30 + ly);
-          width.setTarget(rmap.width/5);
-          opac.setTarget(0);
-        }
-      }
-    }
-
-    // send back to map if not featured
-    if ((spmkFeature != idx) && !littleFeature) {
+    } else if (attributes.includes(attrFeature)) {
+      // include picture in attributes gallery if featured
+      let rowN = 5;
+      let lx = rmap.width/5*(attrPos[attrFeature]%rowN);
+      let ly = width.target*spmkImg.height/spmkImg.width*floor(attrPos[attrFeature]/rowN);
+      x.setTarget(rmap.left + lx);
+      y.setTarget(rmap.bottom + 30 + ly);
+      width.setTarget(rmap.width/5);
+      opac.setTarget(0);
+    } else {
+      // send back to map if not featured
       x.setTarget(mapx);
       y.setTarget(mapy);
       width.setTarget(1);
       opac.setTarget(0);
     }
-
   }
 
   this.display = function() {

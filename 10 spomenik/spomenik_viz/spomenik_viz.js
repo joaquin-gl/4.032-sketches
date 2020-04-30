@@ -11,47 +11,25 @@ var spmkFeature; // spomenik to feature
 
 var attr = {}; // dictionary for storing spmk indices matching attributes
 
-var attrFeature; // attribute to feature
+var attrFeature = ''; // attribute to feature
 
 var n = 105; // number to show
 
 function preload() {
-  spmkJSON = loadJSON("data/spomenik.json");
-  yugoImg = loadImage("data/export_yugoslavia.png");
-
-  // for (let i=0; i<spmkJSON.spomeniks.length; i++) {
-  for (let i=0; i<n; i++) {
-    spmkImgs[i] = loadImage("data/spmk_imgs/" + i + ".webp");
+  spmkJSON = loadJSON("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/spomenik.json");
+  yugoImg = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/export_yugoslavia.png");
+  for (let i = 0; i < n; i++) {
+    spmkImgs[i] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/spmk_imgs/" + i + ".webp");
   }
 }
 
 function setup() {
-  // createCanvas(960, 960);
-  // createCanvas(1366, 768);
-  createCanvas(windowWidth, 2*windowHeight);
+  var canvas = siteCanvas();
+  windowResized();
 
-  print('num of spomeniks: ' + spmkJSON.spomeniks.length);
+  // print('num of spomeniks: ' + spmkJSON.spomeniks.length);
 
-  let margin = width/14;
-
-  rmap.left = margin;
-  rmap.top = margin/3*2;
-  rmap.width = width/2 - margin;
-  rmap.height = rmap.width * yugoImg.height / yugoImg.width;
-  rmap.right = rmap.left + rmap.width;
-  rmap.bottom = rmap.top + rmap.height;
-
-  rmap.latitude = [40.7, 47];
-  rmap.longitude = [13.2, 23.3];
-
-  sb.right = width - margin;
-  sb.top = margin/3*2;
-  sb.width = width/2 - 2*margin;
-  sb.height = height - 2*margin;
-  sb.left = sb.right - sb.width;
-  sb.bottom = sb.top + sb.height;
-
-  for (let i=0; i<n; i++) {
+  for (let i = 0; i < n; i++) {
     data.push(new DataPoint(i));
   }
 
@@ -84,7 +62,7 @@ function draw() {
   text(attrFeature, rmap.left, rmap.bottom);
 
   // update, display each spomenik
-  data.forEach(function(entry){
+  data.forEach(function(entry) {
     entry.update();
     entry.display();
   })
@@ -92,4 +70,27 @@ function draw() {
 
 function mousePressed() {
   attrFeature = '';
+}
+
+function windowResized() {
+  siteResized();
+
+  let margin = width / 14;
+
+  rmap.left = margin;
+  rmap.top = margin / 3 * 2;
+  rmap.width = width / 2 - margin;
+  rmap.height = rmap.width * yugoImg.height / yugoImg.width;
+  rmap.right = rmap.left + rmap.width;
+  rmap.bottom = rmap.top + rmap.height;
+
+  rmap.latitude = [40.7, 47];
+  rmap.longitude = [13.2, 23.3];
+
+  sb.right = width - margin;
+  sb.top = margin / 3 * 2;
+  sb.width = width / 2 - 2 * margin;
+  sb.height = height - 2 * margin;
+  sb.left = sb.right - sb.width;
+  sb.bottom = sb.top + sb.height;
 }
