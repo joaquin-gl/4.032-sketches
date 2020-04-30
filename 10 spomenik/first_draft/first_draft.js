@@ -16,10 +16,10 @@ var attrFeature = ''; // attribute to feature
 var n = 105; // number to show
 
 function preload() {
-  spmkJSON = loadJSON("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/spomenik.json");
-  yugoImg = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/export_yugoslavia.png");
+  spmkJSON = loadJSON("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/spomenik.json");
+  yugoImg = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/export_yugoslavia.png");
   for (let i = 0; i < n; i++) {
-    spmkImgs[i] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/spomenik_viz/data/spmk_imgs/" + i + ".webp");
+    spmkImgs[i] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/spmk_imgs/" + i + ".webp");
   }
 }
 
