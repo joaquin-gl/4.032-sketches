@@ -15,6 +15,8 @@ function SoftNum() {
   this.targeting = false;
   this.target = 0;
 
+  this.noiseX = Math.random()*100;
+
   if (arguments.length === 0) {
     this.value = 0;
     this.damping = DAMPING;
@@ -79,6 +81,10 @@ function SoftNum() {
     this.target = t;
   }
 
+  this.setImperfectTarget = function(t, r) {
+    this.noiseX += 0.01;
+    this.setTarget(t + noise(this.noiseX)*r - r/2)
+  }
 
   this.getTarget = function() {
     return this.target;

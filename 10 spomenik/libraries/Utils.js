@@ -1,4 +1,4 @@
-function siteCanvas(z = 'bg', nav = true) {
+function siteCanvas(z = 'bg', nav = true, scroll = 1) {
   let y = 0;
   if (nav && document.getElementsByClassName("navbar").length > 0) {
     y = document.getElementsByClassName("navbar")[0].offsetHeight;
@@ -16,10 +16,11 @@ function siteCanvas(z = 'bg', nav = true) {
 
 function siteResized() {
   let h;
-  if (windowHeight > document.body.scrollHeight) {h = windowHeight}
-  else {h = document.body.scrollHeight};
+  if (scroll*windowHeight > scroll*document.body.scrollHeight) {h = scroll*windowHeight}
+  else {h = scroll*document.body.scrollHeight};
   let w;
   if (windowHeight > document.body.scrollWidth) {w = windowWidth}
+  // else {w = windowWidth};
   else {w = document.body.scrollWidth};
   resizeCanvas(w, h);
 }
