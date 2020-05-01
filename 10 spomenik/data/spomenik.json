@@ -544,7 +544,20 @@
     "coords": [45.44622222222222, 17.476777777777777],
     "dimensions": [30.0],
     "materials": ["poured concrete", "rebar", "stainless steel"],
-    "condition": ["completely destroyed ", "in ruins"]
+    "condition": ["completely destroyed ", "in ruins"],
+    "stories": [{
+      "pic": "construction",
+      "text": "Challenges were faced finding contractors to build the structure, as something of its scale had never been attempted. Finally, the Zagreb contracting firm \"Industromontaža\" took up the challenge to construct the monument, aided by the Požega construction company \"Pioneer\""
+    }, {
+      "pic": "soldiers",
+      "text": "In late February 1992, it is alleged this Croatian army brigade made several attempts to destroy the Kamenska monument with explosives, with these efforts eventually being successful with their third attempt on February 21st.  Reportedly, its strong and resilient construction resulted in the initial bombing attempts failing until successive attacks created weaknesses within the structure."
+    }, {
+      "pic": "former_site",
+      "text": "Some years after the destruction of the spomenik, all remnants and ruins of it were cleared and removed by locals, as the stainless-steel it was made from was extremely valuable, with much of it reportedly being used to make pots and pans."
+    }, {
+      "pic": "comparison",
+      "text": "This spomenik was one among many destroyed across Croatia during the wave of nationalism experienced in the early 1990s after Croatian independence."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/korenica",
     "title": "Korenica",
@@ -612,7 +625,7 @@
     "condition": ["destroyed w/ explosives ", "abandoned"]
   }, {
     "url": "https://www.spomenikdatabase.org/zlatibor",
-    "title": "(ZLA-tih-boor)",
+    "title": "Zlatibor (Златибoр)",
     "name": "Monument on Šumatno Hill or Monument to the Executed Partisans (Споменик стрељаним партизанима)",
     "location": "Šumatno Hill in Zlatibor, Serbia",
     "city": "Šumatno Hill in Zlatibor",
