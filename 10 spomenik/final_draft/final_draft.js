@@ -43,7 +43,7 @@ function preload() {
     for (s in storyDict[i]) {
       storyImgs[i.toString() + '/' + storyDict[i][s]] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/spmk_imgs/" + i + "/" + storyDict[i][s] + ".webp")
     }
-    console.log(i + " : " + storyDict[i]);
+    // console.log(i + " : " + storyDict[i]);
   }
 }
 

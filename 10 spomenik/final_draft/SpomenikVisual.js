@@ -10,7 +10,7 @@ function SpomenikVisual(idx) {
 
   var storyState = [];
   for (i in spmk.stories) {
-    console.log(spmk.title + " : " + spmk.stories[i].pic);
+    // console.log(idx + " " + spmk.title + " : " + spmk.stories[i].pic);
     storyState[i] = new ImageState(storyImgs[idx.toString() + "/" + spmk.stories[i].pic], 0, 0, 0);
     storyTextOpacity[i] = new SoftNum(0);
   }
@@ -36,7 +36,6 @@ function SpomenikVisual(idx) {
     text(spmk.title, 0, 0);
     pop();
 
-
     if (featuredSpmk == idx) {
       for (i in spmk.stories) {
         storyState[i].display();
@@ -56,6 +55,13 @@ function SpomenikVisual(idx) {
       }
     } else {
       featuredStory = null;
+      for (i in spmk.stories) {
+        push();
+        noStroke();
+        fill(255, 255, 255, 50);
+        circle(mainImg.x.value - mainImg.w.value/2, mainImg.y.value - mainImg.w.value*mainImg.ratio/2, 10);
+        pop();
+      }
     }
   }
 
@@ -94,7 +100,7 @@ function SpomenikVisual(idx) {
         if (featuredStory == i) {
           storyTextOpacity[i].setTarget(255);
           storyState[i].setTarget(mainImg.x.value - mainImg.w.value / 4 - storySpacer / 2,
-            mainImg.y.value + 5 / 3 * mainImg.w.value * mainImg.ratio + storyState[i].w.value * storyState[i].ratio / 2,
+            mainImg.y.value + 4 / 3 * mainImg.w.value * mainImg.ratio + storyState[i].w.value * storyState[i].ratio / 2,
             0,
             mainImg.w.value / 2 - storySpacer);
         } else {
