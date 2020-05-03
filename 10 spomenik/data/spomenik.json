@@ -453,7 +453,20 @@
     "coords": [43.305055555555555, 21.87275],
     "dimensions": [18.0, 23.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["fair", "well maintained"]
+    "condition": ["fair", "well maintained"],
+    "stories": [{
+      "pic": "concentration",
+      "text": "This spomenik complex at Niš commemorates the +10,000 Serbian, Jew and Roma that were executed at this site (a small forested hill just southwest of Niš) from February 1942 to September 1944 by the Nazi occupiers. Niš was finally liberated by Partisans and the Bulgarian Army on October 14th, 1944, when the last remnants of the 7th German SS Division were driven out of the city."
+    }, {
+      "pic": "historic",
+      "text": "Firstly, the three stylized-fist monoliths at the center of the memorial complex are of three different sizes, with the different sizes representing not only the fact that men, women and children were all brutally executed at this site, but also the fact that entire families together were killed here. Yet another interpretation of the symbolism of the three fists is that they represent they three primary ethnic groups that were killed at the site: Serbs, Jews and Roma."
+    }, {
+      "pic": "plaques",
+      "text": "Carved onto the wall on its right end is a verse from Niš poet Ivan Vučković (Slide 2), which, roughly translated from Serbian to English, reads as: \"From the blood of communists and patriots, fists were born: Fists of rebellion and warning, Fists of revolution, Fists of freedom. We were shot, but never killed and never subdued. We crushed the darkness, and paved the way for the sun.\""
+    }, {
+      "pic": "event",
+      "text": "As this monument complex is also used as an active city park, it can see hundreds of visitors a day. There are significant annual ceremonies held at the monument on October 14th (Niš Liberation Day) as well as on May 6th (Djurdjevdan - St George's Day), both of which are generally attended by hundreds of local citizens."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/popina",
     "title": "Popina (Попина)",
@@ -1064,7 +1077,20 @@
     "coords": [45.731, 16.064805555555555],
     "dimensions": [11.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["fair"]
+    "condition": ["fair"],
+    "stories": [{
+      "pic": "bombing",
+      "text": "This monument at the spomenik complex in Pleso area of Zagreb, Croatia commemorates the acts of sabotage committed by Partisan units on Axis controlled airports in the Zagreb area during WWII, while it also commemorates the liberation of Zagreb in 1945."
+    }, {
+      "pic": "dynamic",
+      "text": "The shape of the memorial sculpture here at Pleso is a deliberate reference to the Yugoslav Army breaking the Ustaše and German defensive ring around the city of Zagreb in 1945, an event which subsequently led to the liberation of Zagreb from those Axis powers. The form of this abstract concrete sculpture consists of a standing squared-off tapering ring, with the ring broken at the top and offset roughly 1-2m."
+    }, {
+      "pic": "fire",
+      "text": "From 1991 to 1995, the city of Zagreb was significantly affected by the conflicts and fighting during the Yugoslav Wars and the Croatian War of Independence. In 1997, a small plaque was added to the Pleso spomenik to commemorate two local fighters from Pleso who died during that war."
+    }, {
+      "pic": "approach",
+      "text": "Monument for the village of Pleso whose heroes died in the People's Liberation battle for Yugoslavia, 1941-1945. For 35 years after the attack by the Turpolje Partisan Unit on the Pleso and Kurilovec airport, this monument symbolizes the breaking of the enemy's ring and is made for the city's government, alliance fighters for the People's Liberation fighters and the people of Velika Gorica and the people of Pleso."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/andrijevica",
     "title": "Andrijevica (Андријевица)",
@@ -1272,7 +1298,20 @@
     "coords": [45.14230555555555, 16.49652777777778],
     "dimensions": [10.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["poor", "abandoned"]
+    "condition": ["poor", "abandoned"],
+    "stories": [{
+      "pic": "mirko",
+      "text": "This spomenik complex on Gligino Hill (Gligino Brdo/Глигино Брдо) commemorates this location as the spot of the region's initial uprising efforts and organization by Partisan rebels during July of 1941."
+    }, {
+      "pic": "closeup",
+      "text": "During my research, I found very little to nothing about the planning, design and construction of this spomenik complex here at Gligino Brdo. While I was I not able to find the year this memorial was unveiled to the public, I was however able to discover that the artist who designed this monument was Banja Luka sculptor Ahmed Bešić."
+    }, {
+      "pic": "engrave",
+      "text": "Just a few meters south of the central memorial sculpture there is one small engraved marble plaque: At this place, on the 31st of July, 1941, movements were made towards uprising. We leave the world for a better sunrise. The big light on this hill shines love onto this country. Life and death have changed the name of this hill to 'Freedom Hill'."
+    }, {
+      "pic": "forgotten",
+      "text": "Today, this spomenik complex at Gligino Brdo sits completely neglected and abandoned. There are no signs that any nature of maintenance or stewardship is undertaken to protect or preserve the complex, nor do there seem to be any indications that commemorative or remembrance events are held here any longer."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/zagreb",
     "title": "Zagreb",

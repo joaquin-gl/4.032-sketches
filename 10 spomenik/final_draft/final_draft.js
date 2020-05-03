@@ -15,9 +15,12 @@ storyDict[1] = ['piece', '1970', 'soldiers', 'detail'];
 storyDict[5] = ['sketches', 'audience', 'detail', 'lego'];
 storyDict[12] = ['mirko', '1960s', 'exploded', 'goats'];
 storyDict[19] = ['battle', 'construction', 'faces', 'sitting'];
+storyDict[30] = ['concentration', 'historic', 'plaques', 'event'];
 storyDict[40] = ['massacre_memorial', 'clean', 'site', '2016'];
 storyDict[41] = ['construction', 'soldiers', 'former_site', 'comparison'];
 storyDict[49] = ['execution', 'backlit', 'names', 'decay'];
+storyDict[74] = ['bombing', 'dynamic', 'fire', 'approach'];
+storyDict[90] = ['mirko', 'closeup', 'engrave', 'forgotten'];
 
 var logoState;
 
@@ -39,8 +42,8 @@ function preload() {
     spmkImgs[i] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/spmk_imgs/" + i + ".webp");
     for (s in storyDict[i]) {
       storyImgs[i.toString() + '/' + storyDict[i][s]] = loadImage("https://raw.githubusercontent.com/joaquin-gl/4.032-sketches/master/10%20spomenik/data/spmk_imgs/" + i + "/" + storyDict[i][s] + ".webp")
-      console.log(storyDict[i][s]);
     }
+    console.log(i + " : " + storyDict[i]);
   }
 }
 
