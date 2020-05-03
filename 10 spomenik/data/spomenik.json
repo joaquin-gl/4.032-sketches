@@ -297,7 +297,20 @@
     "coords": [43.346111111111114, 18.686833333333333],
     "dimensions": [19.0, 25.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["fair to good", "much improved ", "mine warning"]
+    "condition": ["fair to good", "much improved ", "mine warning"],
+    "stories": [{
+      "pic": "battle",
+      "text": "In early June of 1943, the Partisans were subsequently boxed in and trapped within Axis lines on Vučevo Mountain on the east Sutjeska River valley, near the small village of Tjentište. As a result, a massive battle between the two sides ensued in what today is known as the 'Battle of Sutjeska' (Bitka na Sutjesci). Despite this hopeless seeming situation, Tito orchestrated a daring move where, starting on the morning of June 9th, he ordered Partisan units to begin breaking west across the open valley and over the river. Some of the Partisans were surprisingly successful in breaking the German lines, at which point they headed up a steep ravine of Ozren Mountain and were then able to break north through German lines and escape past Goražde through the mountains into eastern Bosnia."
+    }, {
+      "pic": "construction",
+      "text": "The sculpture is positioned upon a man-made hillside which situates it in such a way as that the monument can be dramatically seen from across nearly the entire Sutjeska Valley. This placement creates a situation where the monument acts symbolically and physically as both a guardian over the valley, but also as a sort of 'receiver' of the souls from the battlefield's fallen fighters."
+    }, {
+      "pic": "faces",
+      "text": "The idea is that of breakthrough and victory, the two blocks with the figures inside represent the breaking of the circle created around the Partisan forces. The opening takes the shape of the fighters, very stylized, in an architectonic manner, and simple geometric forms to emphasize the presence of men of the individual fighters in the columns, because it is those columns of men that made the breakthrough at Sutjeska possible."
+    }, {
+      "pic": "sitting",
+      "text": "Honorific flowers, candles and wreaths left at this complex is common... existing as clear evidence of locals paying tribute to the site. In fact, in recent years, commemorative and remembrance ceremonies have been a regular occurrence here at Tjentište."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/kadinjaca",
     "title": "Kadinjača (Кадињача)",
@@ -570,7 +583,20 @@
     "coords": [45.375527777777776, 14.49711111111111],
     "dimensions": [22.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["fair", "well maintained"]
+    "condition": ["fair", "well maintained"],
+    "stories": [{
+      "pic": "massacre_memorial",
+      "text": "This memorial complex at Podhum commemorates the victims which were executed by Axis Italian occupational forces during the National Liberation War (WWII). Documents indicate that upwards of 91 people from the area were executed in these reprisal killings, while nearly 1000 additional residents being sent off to Italian concentration camps."
+    }, {
+      "pic": "clean",
+      "text": "The bulge shapes which make up the sculpture, of which there are 91, are said to be 'petals' of the flower representing each of the 91 victims who were executed at the site."
+    }, {
+      "pic": "site",
+      "text": "These walls softly encompass the place of death, and through the two passageways this terrible place communicates with the fields and the mountains. Contrasting with the gray stone walls are white plates bearing the names of the slain, and the rows of fragmented white stacks function as the headstones of the fallen villagers of Podhum."
+    }, {
+      "pic": "2016",
+      "text": "In a 2018 ceremony commemorating 76 years since the massacre, head of the municipality of Čavle, Ivana Cvitan Polić, stated that she felt that all schools in the region should include a visit to the Podhum monument in their curriculum."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/kamenska",
     "title": "Kamenska",
@@ -700,7 +726,20 @@
     "coords": [45.21025, 16.669305555555557],
     "dimensions": [15.0],
     "materials": ["poured concrete", "rebar", "stainless steel"],
-    "condition": ["fair", "neglected"]
+    "condition": ["fair", "neglected"],
+    "stories": [{
+      "pic": "execution",
+      "text": "The town of Slabinja fell under the military administration their NDH nationalist Ustaše militiamen. A campaign of war and terror was waged against the town by the Ustaše, as many of its residents were of ethnic-Serb descent, who the NDH wished to specifically expel or liquidate from its borders."
+    }, {
+      "pic": "backlit",
+      "text": "The monument was symbolically unveiled to the public on May 30th, 1981, which is not only the day of the 40th anniversary of the Yugoslavian people's uprising against oppression, but it is also the same month in which the town was finally liberated from Axis forces in 1945."
+    }, {
+      "pic": "names",
+      "text": "on the central stainless steel spire of the Slabinja memorial sculpture, the names and ages of exactly 547 fallen victims from the surrounding region of Banovia region, which was heavily impacted during WWII, are directly inscribed."
+    }, {
+      "pic": "decay",
+      "text": "The state of the small spomenik complex here in Slabinja, Croatia is somewhat poor. While the landscaping and grounds in the vicinity of the complex are in reasonable order, this is more than likely due to the fact that the memorial is located in the center of the village adjacent to a children's playground, and less so to do with efforts to maintain or preserve the memorial."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/donji-miholjac",
     "title": "Donji Miholjac",

@@ -14,7 +14,10 @@ var storyDict = [];
 storyDict[1] = ['piece', '1970', 'soldiers', 'detail'];
 storyDict[5] = ['sketches', 'audience', 'detail', 'lego'];
 storyDict[12] = ['mirko', '1960s', 'exploded', 'goats'];
+storyDict[19] = ['battle', 'construction', 'faces', 'sitting'];
+storyDict[40] = ['massacre_memorial', 'clean', 'site', '2016'];
 storyDict[41] = ['construction', 'soldiers', 'former_site', 'comparison'];
+storyDict[49] = ['execution', 'backlit', 'names', 'decay'];
 
 var logoState;
 
