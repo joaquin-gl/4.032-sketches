@@ -24,7 +24,20 @@
     "coords": [45.31627777777778, 15.80488888888889],
     "dimensions": [37.0, 40.0],
     "materials": ["poured concrete", "rebar", "steel frame", "stainless steel plates"],
-    "condition": ["abandoned", "destroyed "]
+    "condition": ["abandoned", "destroyed "],
+    "stories": [{
+      "pic": "piece",
+      "text": "As this monument's form does not seem to be directly created or imbued with any specific symbolism in its general appearance, the personal emotions Bakić imbued in its creation was certainly significant, as he dedicated the monument to his four brothers, all of whom died at the Ustaše's Jadovno death camps in 1941."
+    }, {
+      "pic": "1970",
+      "text": "The exterior of the building was not officially completed until October 4th, 1981, during which time it was inaugurated during a ceremony by the President of the Parliament of the SR of Croatia, Jure Bilić, which was attended by nearly 4,000 people."
+    }, {
+      "pic": "soldiers",
+      "text": "With the onset of the Yugoslav Wars in the 1990s the monument at Petrova Gora fell into disrepair and was targeted and attacked by vandals. Over the subsequent decades it became completely defaced, looted and demolished, with all its historical artifacts and relics contained within its museum and archives being taken or destroyed."
+    }, {
+      "pic": "detail",
+      "text": "What remains now is a hollow husk of a structure, being held up by a massive concrete skeleton. The majority of the stainless steel panels have been removed and/or stolen, while fallen pieces of rotted insulation are scattered around the entire monument, inside and out. The basement level is flooded and inhabited by animals. Meanwhile, the elevator-shafts lay wide-open, exposing an eerie pitch-black void. The front of the building is gated and fenced in, however, holes have been made in the fences to allow entrance to the structure."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/ilirska-bistrica",
     "title": "Ilirska Bistrica",
@@ -76,7 +89,20 @@
     "coords": [45.64083333333333, 16.777666666666665],
     "dimensions": [10.0, 20.0],
     "materials": ["poured concrete", "rebar", "aluminum sheets"],
-    "condition": ["good", "occasional maintanence"]
+    "condition": ["good", "occasional maintanence"],
+    "stories": [{
+      "pic": "sketches",
+      "text": "According to the designer, Dušan Džamonja, the primary intention of the monument was to represent the 'wings of victory' overcoming death and defeat, an overt allusion to the Partisan rebel's conquest over the invading Axis occupiers. The 'wings' of the sculpture are asymmetrical, with one wing having two edges, while the other has three. This imbalance gives the sculpture a dynamic shape, as if the wings are in motion or as if it a bird preparing to take flight."
+    }, {
+      "pic": "audience",
+      "text": "As a consequence of the significant Partisan efforts towards uprising and opposition against occupying Ustaše forces in Podgarić, local government and regional veteran groups there made plans in the mid-1960s for the construction of a spomenik complex to recognize these achievements."
+    }, {
+      "pic": "detail",
+      "text": "Currently, this memorial complex here at Podgarić is in reasonably good condition, with there being few signs of serious or extensive damage or deterioration of the monument's structure. While there is no signage or advertising directing visitors from the road to the monument, there seems to be some degree of maintenance and upkeep going on."
+    }, {
+      "pic": "lego",
+      "text": "Meanwhile, in the years since the abstract Yugoslav monuments reached global popularity in the early 2010s, the sculpture here at Podgarić has often stood among those whose adventurous form foreign audiences were most captivated and inspired by. This has led to many internet-based digital artists using images of the monument as a basis for their digital artwork."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/jasenovec",
     "title": "Jasenovac",
@@ -167,7 +193,20 @@
     "coords": [43.627805555555554, 16.69163888888889],
     "dimensions": [17.0],
     "materials": ["poured concrete", "rebar"],
-    "condition": ["derelict", "destroyed"]
+    "condition": ["derelict", "destroyed"],
+    "stories": [{
+      "pic": "mirko",
+      "text": "This monument at Košute was built to commemorate the 1st Split Partisan detachment, a squad of mostly inexperienced young men from Split, Croatia who, in August 1941, decided to take up arms against the occupying Axis forces, just months after Dalmatia was annexed by the invading Italian forces."
+    }, {
+      "pic": "1960s",
+      "text": "The primary element of the spomenik was a 17m tall triple-obelisk balanced on a tripod, set upon bare rock. During the years of Yugoslavia, the memorial complex was a significant cultural and historic landmark for tourists, veterans and locals wishing to pay respects to the memory of those who were lost."
+    }, {
+      "pic": "exploded",
+      "text": "The monument here at Košute became a symbol of 'the old system' for many nationalistic Croatians. At some point around August 21st/22nd of 1992, the monument was laden with explosives, brought to the ground and destroyed."
+    }, {
+      "pic": "goats",
+      "text": "I was unable to establish that the site receives any nature of protection status or official historical recognition extended to the site by the Croatian government on either the local, regional or national level.  The only other observable presence of those visiting the monument, other than those wishing to deface it, were the goats and other animals that herders continually using the graze the hillsides."
+    }]
   }, {
     "url": "https://www.spomenikdatabase.org/podgora",
     "title": "Podgora",

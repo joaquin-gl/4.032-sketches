@@ -11,6 +11,9 @@ var nRowsTitle = 7; // number of rows in photo matrix (15 columns)
 var nColsStory = 3; // number of columns in sidebar matrix (15 columns)
 
 var storyDict = [];
+storyDict[1] = ['piece', '1970', 'soldiers', 'detail'];
+storyDict[5] = ['sketches', 'audience', 'detail', 'lego'];
+storyDict[12] = ['mirko', '1960s', 'exploded', 'goats'];
 storyDict[41] = ['construction', 'soldiers', 'former_site', 'comparison'];
 
 var logoState;
